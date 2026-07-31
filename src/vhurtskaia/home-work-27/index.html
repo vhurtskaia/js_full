@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>JavaScript Slider</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<main>
+  <h1 class="title">Функціональний JavaScript Slider</h1>
+  <section class="slider" id="slider">
+    <div class="slider__wrapper">
+      <div class="slider__track">
+        <div class="slide active">
+          <img alt="Mountain" src="https://picsum.photos/id/1015/1200/600">
+          <div class="slide__content">
+            <h2>Mountain</h2>
+            <p>Description 1</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img alt="Lake" src="https://picsum.photos/id/1016/1200/600">
+          <div class="slide__content">
+            <h2>Lake</h2>
+            <p>Description 2</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img alt="Dog" src="https://picsum.photos/id/1025/1200/600">
+          <div class="slide__content">
+            <h2>Dog</h2>
+            <p>Description 3</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img alt="Sea" src="https://picsum.photos/id/1039/1200/600">
+          <div class="slide__content">
+            <h2>Sea</h2>
+            <p>Description 4</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="slider__btn slider__btn--prev" id="prevBtn">
+      &#10094;
+    </button>
+    <button class="slider__btn slider__btn--next" id="nextBtn">
+      &#10095;
+    </button>
+    <div class="slider__controls">
+      <button class="slider__play" id="playPauseBtn">
+        Pause
+      </button>
+      <div class="slider__dots" id="dots"></div>
+    </div>
+  </section>
+</main>
+<script src="js/slider.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
