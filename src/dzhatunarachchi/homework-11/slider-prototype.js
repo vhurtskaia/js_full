@@ -220,7 +220,7 @@ class Slider {
     this.state.playing ? this.pause() : this.play();
   }
 
- 
+
   destroy() {
     clearInterval(this.state.timer);
     document.removeEventListener('keydown', this._onKeydown);
@@ -231,7 +231,7 @@ class Slider {
 
 class TouchSlider extends Slider {
   constructor(container, config) {
-    super(container, config);  
+    super(container, config);
     this._bindDragEvents();
   }
 

@@ -1,40 +1,100 @@
-
-
-body{
-  margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
-  background:#f2efe9; font-family:sans-serif;
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2efe9;
+  font-family: sans-serif;
 }
 
-.cs-slider{
-  width:360px; background:#fff; border-radius:16px; padding:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,.12); user-select:none;
+.cs-slider {
+  width: 360px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  user-select: none;
 }
 
-.cs-viewport{ overflow:hidden; border-radius:10px; touch-action:pan-y; }
-
-.cs-track{ display:flex; transition:transform .4s ease; }
-.cs-track.no-anim{ transition:none; }
-
-.cs-slide{ flex:0 0 100%; }
-.cs-slide img{ width:100%; height:260px; object-fit:cover; display:block; pointer-events:none; }
-
-.cs-controls{
-  display:flex; align-items:center; justify-content:space-between; margin-top:12px; gap:8px;
+.cs-viewport {
+  overflow: hidden;
+  border-radius: 10px;
+  touch-action: pan-y;
 }
 
-.cs-btn{
-  border:none; background:#eee; border-radius:50%; width:36px; height:36px;
-  font-size:16px; cursor:pointer; flex-shrink:0;
+.cs-track {
+  display: flex;
+  transition: transform 0.4s ease;
 }
-.cs-btn:hover{ background:#ddd; }
-.cs-btn:focus-visible{ outline:2px solid #333; outline-offset:2px; }
-
-.cs-play{ width:auto; border-radius:18px; padding:0 14px; font-size:13px; }
-
-.cs-dots{ display:flex; gap:6px; align-items:center; justify-content:center; flex:1; }
-
-.cs-dot{
-  width:8px; height:8px; border-radius:50%; background:#ccc; border:none; padding:0; cursor:pointer;
+.cs-track.no-anim {
+  transition: none;
 }
-.cs-dot:hover{ background:#bbb; }
-.cs-dot.active{ background:#333; }
+
+.cs-slide {
+  flex: 0 0 100%;
+}
+.cs-slide img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.cs-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  gap: 8px;
+}
+
+.cs-btn {
+  border: none;
+  background: #eee;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.cs-btn:hover {
+  background: #ddd;
+}
+.cs-btn:focus-visible {
+  outline: 2px solid #333;
+  outline-offset: 2px;
+}
+
+.cs-play {
+  width: auto;
+  border-radius: 18px;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+.cs-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.cs-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.cs-dot:hover {
+  background: #bbb;
+}
+.cs-dot.active {
+  background: #333;
+}

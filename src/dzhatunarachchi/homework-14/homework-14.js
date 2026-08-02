@@ -32,7 +32,7 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com';
 
 async function getData(segment) {
     try {
-        const response = await fetch(`${BASE_URL}${segment}`);
+        const response = await fetch(`https://jsonplaceholder.typicode.com${segment}`);
 
         if (!response.ok) {
             return response.status;
@@ -46,7 +46,9 @@ async function getData(segment) {
         return error.message;
     }
 }
-
+getData('/posts').then(result => console.log('Результат:', result));
+getData('/posts/1').then(result => console.log('Результат:', result));
+getData('/nonexistent').then(result => console.log('Результат:', result)); // поверне 404
 /*
  *
  * #2
@@ -73,6 +75,7 @@ async function getData(segment) {
  *
  */
 
+
 async function postData(segment, data) {
     try {
         const response = await fetch(`${BASE_URL}${segment}`, {
@@ -95,6 +98,18 @@ async function postData(segment, data) {
         return error.message;
     }
 }
+
+// Приклади виклику для перевірки:
+
+postData('/posts', {
+    title: 'foo',
+    body: 'bar',
+    userId: 1,
+}).then(result => console.log('Результат:', result));
+
+postData('/nonexistent', {
+    title: 'test',
+}).then(result => console.log('Результат:', result)); // очікуємо повідомлення про помилку
 
 /*
  *
@@ -122,7 +137,8 @@ async function postData(segment, data) {
  *
  */
 
-async function putData(id, data) {
+
+async function updateData(id, data) {
     try {
         const response = await fetch(`${BASE_URL}/posts/${id}`, {
             method: 'PUT',
@@ -145,6 +161,18 @@ async function putData(id, data) {
     }
 }
 
+// Приклади виклику для перевірки:
+
+updateData(1, {
+    id: 1,
+    title: 'оновлений заголовок',
+    body: 'оновлений текст поста',
+    userId: 1,
+}).then(result => console.log('Результат:', result));
+
+updateData(99999, {
+    title: 'неіснуючий пост',
+}).then(result => console.log('Результат:', result)); // очікуємо повідомлення про помилку
 /*
  *
  * #4
@@ -171,6 +199,7 @@ async function putData(id, data) {
  *
  */
 
+
 async function patchData(id, data) {
     try {
         const response = await fetch(`${BASE_URL}/posts/${id}`, {
@@ -193,6 +222,16 @@ async function patchData(id, data) {
         return error.message;
     }
 }
+
+// Приклади виклику для перевірки:
+
+patchData(1, {
+    title: 'частково оновлений заголовок',
+}).then(result => console.log('Результат:', result));
+
+patchData(99999, {
+    title: 'неіснуючий пост',
+}).then(result => console.log('Результат:', result)); // очікуємо повідомлення про помилку
 
 /*
  *
@@ -222,23 +261,32 @@ async function patchData(id, data) {
  *
  */
 
+
 async function deleteData(id) {
     try {
         const response = await fetch(`${BASE_URL}/posts/${id}`, {
             method: 'DELETE',
         });
 
-        if (response.ok) {
-            console.log(`Post with id ${id} has been successfully deleted.`);
-            return true;
+        if (!response.ok) {
+            console.log(`Failed to delete post with id ${id}. Status: ${response.status}`);
+            return response.status;
         }
 
-        console.log(`Failed to delete post with id ${id}. Status: ${response.status}`);
-        return response.status;
+        console.log(`Post with id ${id} has been successfully deleted.`);
+        return true;
     } catch (error) {
-        console.log(`Error during deletion: ${error.message}`);
+        console.error(`Error during deletion: ${error.message}`);
         return error.message;
     }
 }
 
-export { getData, postData, putData, patchData, deleteData };
+
+// Приклади виклику для перевірки:
+
+deleteData(1).then(result => console.log('Результат:', result));
+
+deleteData(99999).then(result => console.log('Результат:', result)); // очікуємо помилку/статус
+
+
+//export { getData, postData, putData, patchData, deleteData };

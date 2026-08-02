@@ -98,7 +98,7 @@ function renderResults(movies) {
 async function searchMovies(query, signal) {
   const url = `${CONFIG.baseUrl}?apikey=${encodeURIComponent(
     CONFIG.apiKey
-  )}&s=${encodeURIComponent(query)}&type=movie,series,episode`;
+  )}&s=${encodeURIComponent(query)}`;
 
   const response = await fetch(url, { signal });
 
