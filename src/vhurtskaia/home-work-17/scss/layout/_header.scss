@@ -1,0 +1,100 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: $color-primary-200;
+  padding-block: 16px;
+
+  &__inner {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+.nav {
+  display: none;
+
+  @include media(lg) {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 300;
+    transition: opacity $transition-base;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.75;
+    }
+  }
+}
+
+.header-buttons {
+  display: none;
+  gap: 8px;
+
+  @include media(lg) {
+    display: flex;
+  }
+}
+
+.burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+
+  @include media(lg) {
+    display: none;
+  }
+
+  &__icon,
+  &__icon::before,
+  &__icon::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: $color-white;
+    border-radius: 2px;
+    transition: transform $transition-base, opacity $transition-base;
+  }
+
+  &__icon {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      top: 8px;
+    }
+  }
+}

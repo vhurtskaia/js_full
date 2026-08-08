@@ -1,0 +1,48 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+body {
+  font-family: $font-primary;
+  font-size: 18px;
+  line-height: 1.5;
+  color: $color-white;
+  background: $color-body-bg;
+  overflow-x: hidden;
+}
+
+.text-h1 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+
+  @include media(md) {
+    font-size: 56px;
+  }
+
+  @include media(lg) {
+    font-size: 72px;
+  }
+}
+
+.text-h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  @include media(md) {
+    font-size: 44px;
+  }
+
+  @include media(lg) {
+    font-size: 64px;
+  }
+}
+
+.section-text {
+  font-size: 16px;
+  margin-bottom: 40px;
+
+  @include media(md) {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,27 @@
+$font-primary: 'Inter', sans-serif;
+
+$color-primary-200: #043873;
+$color-primary-100: #4F9CF9;
+
+$color-secondary-yellow: #FFE492;
+$color-secondary-blue: #A7CEFC;
+$color-secondary-gray: #212529;
+
+$color-white: #ffffff;
+$color-body-bg: #ffffff;
+
+$container-max-width: 1536px;
+$container-padding: 16px;
+
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 24px;
+$shadow-card: 0 20px 40px rgba(4, 56, 115, 0.08);
+$transition-base: 0.25s ease;
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px
+);

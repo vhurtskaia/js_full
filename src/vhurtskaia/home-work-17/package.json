@@ -1,0 +1,13 @@
+{
+  "name": "whitepace-final-project",
+  "version": "1.0.0",
+  "description": "Фінальний веб-проєкт: адаптивний лендинг на SCSS з динамічними елементами (бургер-меню, таби).",
+  "scripts": {
+    "build:css": "sass scss/style.scss css/style.css --no-source-map",
+    "watch:css": "sass scss/style.scss css/style.css --watch --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  },
+  "license": "MIT"
+}

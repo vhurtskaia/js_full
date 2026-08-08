@@ -1,0 +1,58 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding-block: 80px;
+  color: $color-secondary-gray;
+}
+
+.feature {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+
+  @include media(xl) {
+    flex-direction: row;
+    gap: 80px;
+    text-align: left;
+  }
+
+  &--reverse {
+      flex-direction: column-reverse;
+
+    @include media(xl) {
+      flex-direction: row;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    @include media(xl) {
+      align-items: flex-start;
+    }
+  }
+
+  &__text {
+    margin-block: 8px 32px;
+    max-width: 46ch;
+  }
+
+  img {
+    flex: 1;
+    border-radius: $radius-lg;
+  }
+
+  &__image {
+      width: 708px;
+  }
+}
